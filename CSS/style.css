@@ -648,7 +648,7 @@ button {
     height: 100%;
 }
 
-.overlay {
+.card__overlay {
 
     position: absolute;
     background-color: rgba(33, 150, 243, 0.9);
@@ -659,19 +659,20 @@ button {
     height: 100%;
     pointer-events: none;
     transform: translateY(100%);
+    
     transition-property: transform, opacity;
     transition-duration: 500ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);   
 }
 
-.card:hover .overlay,
-.card:focus .overlay {
+.card:hover .card__overlay,
+.card:focus .card__overlay {
 
     opacity: 1;
     transform: translateY(0);
 }
 
-.overlay__text {
+.card__overlay-text {
 
     font-family: 'Roboto';
     font-weight: 400;
