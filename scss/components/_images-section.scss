@@ -18,16 +18,15 @@
     position: relative;
     display: flex;
     justify-content: center;
-}
 
-.images::before {
-
-    content: " ";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    background: rgba(47, 48, 58, 0.8);
+    &::before {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background: rgba(47, 48, 58, 0.8);
+    }
 }
 
 .images__text {

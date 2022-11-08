@@ -87,6 +87,40 @@ button {
   overflow: hidden;
 }
 
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden.modal {
+  -webkit-transform: translate(50%, 50%) scale(0.9);
+          transform: translate(50%, 50%) scale(0.9);
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 5px 4px 6px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--background-whight);
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition-property: fill;
+  transition-property: fill;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--background-black);
+}
+.close-button:hover, .close-button:focus {
+  fill: var(--accent-color);
+}
+
 .client {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,12 +130,6 @@ button {
 
 .client__item {
   width: calc((100% - 150px) / 6);
-}
-
-.client__link:hover,
-.client__link:focus {
-  fill: var(--accent-color);
-  border-color: var(--accent-color);
 }
 
 .client__link {
@@ -125,6 +153,10 @@ button {
           transition-duration: 250ms;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.client__link:hover, .client__link:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .section-feature {
@@ -214,6 +246,13 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.filter-button:hover, .filter-button:focus {
+  color: var(--background-whight);
+  background-color: var(--accent-color);
+  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
 
 .filter {
   display: -webkit-box;
@@ -229,15 +268,6 @@ button {
   min-width: -moz-max-content;
   min-width: max-content;
   margin-bottom: 50px;
-}
-
-.filter-button:hover,
-.filter-button:focus {
-  color: var(--background-whight);
-  background-color: var(--accent-color);
-  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-          box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 .footer {
@@ -275,6 +305,9 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.footer-contact__adress:hover, .footer-contact__adress:focus {
+  color: var(--accent-color);
+}
 
 .footer-contact__link {
   font-family: "Roboto";
@@ -292,6 +325,9 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.footer-contact__link:hover, .footer-contact__link:focus {
+  color: var(--accent-color);
+}
 
 .footer-contact {
   display: -webkit-box;
@@ -303,16 +339,6 @@ button {
           flex-direction: column;
   margin-top: 20px;
   row-gap: 9px;
-}
-
-.footer-contact__adress:hover,
-.footer-contact__adress:focus {
-  color: var(--accent-color);
-}
-
-.footer-contact__link:hover,
-.footer-contact__link:focus {
-  color: var(--accent-color);
 }
 
 .footer-net__title {
@@ -364,9 +390,7 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.footer-net__link:hover,
-.footer-net__link:focus {
+.footer-net__link:hover, .footer-net__link:focus {
   background-color: var(--accent-color);
 }
 
@@ -386,31 +410,6 @@ button {
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 20px;
-}
-
-.button-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 12px;
-  gap: 12px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 200px;
-  height: 50px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  line-height: 1.9;
-  text-align: center;
-  letter-spacing: 0.06em;
-  color: var(--background-whight);
-  background-color: var(--accent-color);
-  cursor: pointer;
 }
 
 .footer-form-send__input {
@@ -486,6 +485,31 @@ button {
   background-color: var(--footer-background);
 }
 
+.button-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 12px;
+  gap: 12px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--background-whight);
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -554,6 +578,9 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.menu__link:hover, .menu__link:focus {
+  color: var(--accent-color);
+}
 
 .menu__link--current {
   color: var(--accent-color);
@@ -564,7 +591,6 @@ button {
   letter-spacing: 0.02em;
   text-decoration: none;
 }
-
 .menu__link--current::after {
   position: absolute;
   display: inline-block;
@@ -575,11 +601,6 @@ button {
   bottom: -32px;
   background-color: var(--accent-color);
   border-radius: 2px;
-}
-
-.menu__link:hover,
-.menu__link:focus {
-  color: var(--accent-color);
 }
 
 .contact__link {
@@ -605,9 +626,7 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.contact__link:hover,
-.contact__link:focus {
+.contact__link:hover, .contact__link:focus {
   fill: var(--accent-color);
   color: var(--accent-color);
 }
@@ -670,7 +689,6 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .images::before {
   content: " ";
   position: absolute;
@@ -741,9 +759,7 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.card:hover,
-.card:focus {
+.card:hover, .card:focus {
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -839,9 +855,7 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.primary-button:hover,
-.primary-button:focus {
+.primary-button:hover, .primary-button:focus {
   color: var(--background-black);
 }
 
@@ -918,9 +932,7 @@ button {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.net-list__link:hover,
-.net-list__link:focus {
+.net-list__link:hover, .net-list__link:focus {
   background-color: var(--accent-color);
   fill: var(--background-whight);
 }
